@@ -29,7 +29,7 @@ Functions
 
 This module defines the following functions:
 
-.. py:function:: initialize(uri [, trace_level=0 [, trace_file=sys.stdout [, trace_stack_limit=None, [fileno=None]]]]) -> LDAPObject object
+.. py:function:: initialize([uri=None [, trace_level=0 [, trace_file=sys.stdout [, trace_stack_limit=None, [fileno=None]]]]]) -> LDAPObject object
 
    Initializes a new connection object for accessing the given LDAP server,
    and return an :class:`~ldap.ldapobject.LDAPObject` used to perform operations
@@ -38,7 +38,8 @@ This module defines the following functions:
    The *uri* parameter may be a comma- or whitespace-separated list of URIs
    containing only the schema, the host, and the port fields. Note that
    when using multiple URIs you cannot determine to which URI your client
-   gets connected.
+   gets connected. If *uri* is :py:const:`None`, the default URIs from
+   ``ldap.conf`` or :py:const:`OPT_URI` global option will be used.
 
    If *fileno* parameter is given then the file descriptor will be used to
    connect to an LDAP server. The *fileno* must either be a socket file
