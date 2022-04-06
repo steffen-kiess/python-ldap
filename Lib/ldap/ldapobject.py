@@ -67,7 +67,7 @@ class SimpleLDAPObject:
   }
 
   def __init__(
-    self,uri,
+    self,uri=None,
     trace_level=0,trace_file=None,trace_stack_limit=5,bytes_mode=None,
     bytes_strictness=None, fileno=None
   ):
@@ -844,7 +844,7 @@ class ReconnectLDAPObject(SimpleLDAPObject):
   }
 
   def __init__(
-    self,uri,
+    self,uri=None,
     trace_level=0,trace_file=None,trace_stack_limit=5,bytes_mode=None,
     bytes_strictness=None, retry_max=1, retry_delay=60.0, fileno=None
   ):
